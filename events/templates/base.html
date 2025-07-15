@@ -1,0 +1,23 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Booking System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'events/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🎟️ Event Booking System</h1>
+    </header>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Event Center</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ event.title }}</h2>
+  <p>{{ event.description }}</p>
+  <p><strong>Date:</strong> {{ event.date }}</p>
+  <p><strong>Seats Left:</strong> {{ event.seats_left }}</p>
+
+  <h3>Book Your Ticket</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Book Ticket</button>
+  </form>
+
+  {% if form.errors %}
+    <p style="color: red;">Please fix the errors above.</p>
+  {% endif %}
+
+  <p><a href="{% url 'event_list' %}">← Back to Events</a></p>
+{% endblock %}
